@@ -96,7 +96,8 @@ public class ATM {
    *         less than the amount currently in account balance.
    */
   public double withdraw(double amount) throws IllegalArgumentException {
-    if ((amount < 0) || (amount < balance)) {
+	  //changed amount < balance to amount > balance
+    if ((amount < 0) || (amount > balance)) {
       throw new IllegalArgumentException("Invalid withdrawal");
     } else {
       balance = balance - amount;
