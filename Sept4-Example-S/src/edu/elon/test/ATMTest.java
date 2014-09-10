@@ -51,4 +51,19 @@ public class ATMTest {
 		assertEquals(actual,expected,0.2f);
 	}
 
+	@Test(expected=IllegalArgumentException.class)
+	public void testWithdrawThrowsNegative() {
+		atm.withdraw(-50);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testWithdrawThrowsGreater() {
+		atm.withdraw(50);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testDepositThrows() {
+		atm.deposit(-5);
+	}
+
 }
